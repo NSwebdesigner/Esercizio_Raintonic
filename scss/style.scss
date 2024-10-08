@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(148,187,233);
+    background: radial-gradient(circle, rgba(148,187,233,1) 0%, rgba(0,18,255,0.6867121848739496) 100%);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 15px 0;
+
+        p {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+h3{
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+form {
+    margin: 100px auto;
+    text-align: center;
+}
+
+button, input {
+    border-radius: 45px;
+    padding: 10px;
+}
+
+.display_meteo{
+    text-align: center;
+    margin-bottom: 50px;
+
+    span{
+        font-weight: 700;
+    }
+}
+
+.button_rimuovi{
+    background-color: rgb(243, 46, 46);
+    transition: all 0.4s ;
+
+    &:hover{
+        border: 2px solid rgb(243, 46, 46);
+        background-color: aliceblue;
+        transition: all 0.4s ;
+    }
+}
+
+.button_cerca{
+    transition: all 0.4s ;
+
+    &:hover{
+        transition: all 0.4s ;
+        background-color: aqua;
+    }
+}
+
+.button_prefe{
+    transition: all 0.4s ;
+
+    &:hover{
+        transition: all 0.4s ;
+        background-color: yellow;
+    }
+}
+
+.weather-icon {
+    width: 50px;  
+    height: 50px; 
+    background-image: url('../img/meteo_icon.jpg'); 
+    background-size: 300px 300px;
+    display: inline-block;
+    border-radius: 100%;
+}
