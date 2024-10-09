@@ -63,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayMeteoHtml.innerHTML = `
             <h2>Previsioni meteo per ${citta}</h2>
             <p><span>Temperatura attuale:</span> ${weatherData.current_weather.temperature}°C</p>
-            <p><span>Condizioni meteo:</span> ${weatherData.current_weather.weathercode}</p>
-            <div id="weather-icon-sprite" class="weather-icon" style="background-position: ${weatherIconPosition};"></div> <!-- Applica la posizione corretta -->
+            <div id="weather-icon-sprite" class="weather-icon" style="background-position: ${weatherIconPosition};"></div> 
             <p><span>Umidità relativa:</span> ${umidita}%</p>
             <p><span>Velocità del vento:</span> ${weatherData.current_weather.windspeed} km/h</p>
         `;
@@ -74,11 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function saveMeteo(citta, weatherData) {
         const newLi = document.createElement('li');
         const umidita = weatherData.hourly.relative_humidity_2m[0];
+        const weatherIconPosition = getWeatherIconPosition(weatherData.current_weather.weathercode);
 
         newLi.innerHTML = `
             <h3>${citta}</h3>
             <p>Temperatura: ${weatherData.current_weather.temperature}°C</p>
-            <span>${weatherData.current_weather.weathercode}</span>
+            <div id="weather-icon-sprite" class="weather-icon" style="background-position: ${weatherIconPosition};"></div>
             <p>Umidità: ${umidita}%</p>
             <p>Vento: ${weatherData.current_weather.windspeed} km/h</p>
             <button class="button_rimuovi">Rimuovi</button>
